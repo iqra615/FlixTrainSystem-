@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Flix Management System</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-light">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Flix Management System</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/flix}">Flix Management</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br>
+<br>
+<div class = "container">
+    <div class = "row">
+        <div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class = "text-center"> Create New Passenger </h1>
+            <div class = "card-body">
+                <form th:action="@{/flix}" th:object = "${flix}" method="POST">
+                    <div class ="form-group">
+                        <label> Passenger First Name </label>
+                        <input
+                                type = "text"
+                                name = "passengerName"
+                                th:field = "*{passengerName}"
+                                class = "form-control"
+                                placeholder="Emma"
+                        />
+                    </div>
+
+                    <div class ="form-group">
+                        <label> Passenger Email </label>
+                        <input
+                                type = "text"
+                                name = "passengerEmail"
+                                th:field = "*{passengerEmail}"
+                                class = "form-control"
+                                placeholder="Emma2@icloud.com"
+                        />
+                    </div>
+
+                    <div class ="form-group">
+                        <label> Passenger booking Number </label>
+                        <input
+                                type = "text"
+                                name = "bookingNumber"
+                                th:field = "*{bookingNumber}"
+                                class = "form-control"
+                                placeholder="B387346g"
+                        />
+                    </div>
+
+                    <div class ="form-group">
+                        <label> Ticket Price </label>
+                        <input
+                                type = "text"
+                                name = "ticketPrice"
+                                th:field = "*{ticketPrice}"
+                                class = "form-control"
+                                placeholder="9.99"
+                        />
+                    </div>
+
+
+
+                    <div class = "box-footer">
+                        <button type="submit" class = "btn btn-primary">
+                            Submit
+                        </button>
+
+
+
+
+
+            </div>
+                </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
