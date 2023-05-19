@@ -48,5 +48,10 @@ public class FlixServiceImpl implements FlixService {
 
     }
 
+    @Override
+    public List first_page_flix() {
+        return flixRepository.findAll();
+    }
+
 
 }
