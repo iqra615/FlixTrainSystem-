@@ -15,6 +15,9 @@ public interface FlixService {
 
     void deleteFlixById(Long id);
 
+    List first_page_flix();
+
+
 
 
 }
