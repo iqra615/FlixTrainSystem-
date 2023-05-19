@@ -25,6 +25,26 @@ public class FlixController {
        return "flix";
    }
 
+
+
+
+    @GetMapping("/first")
+    public String first_page_flix(Model model) {
+        model.addAttribute("flix",flixService.getAllFlix());
+        return "first_page_flix";
+    }
+
+
+
+
+
+    @GetMapping("/list")
+    public String list_train(){
+       return "list_train";
+    }
+
+
+
    @GetMapping("/flix/new")
     public String createFlixForm(Model model) {
        Flix flix= new Flix();
@@ -39,6 +59,10 @@ public class FlixController {
        flixService.saveFlix(flix);
        return "redirect:/flix";
    }
+
+
+
+
 
 
 
